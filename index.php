@@ -122,6 +122,7 @@
 <button onclick="sendMSG()" id="send-btn">Send</button>
 </div>
 </div>
+<a href="https://github.com/jyhong836/jacie">The Jacie At GitHub</a>
 
 </body>
 </html>
