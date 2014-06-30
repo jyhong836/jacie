@@ -16,7 +16,7 @@
 }
 .chat_wrapper .message_box {
 	background: #FFFFFF;
-	height: 150px;
+	height: 200px;
 	overflow: auto;
 	padding: 10px;
 	border: 1px solid #999999;
@@ -53,8 +53,16 @@
 	var jacie_colour = 'F00';
 	
 	websocket.onopen = function(ev) { // connection is open 
-		$('#message_box').append("<div class=\"system_msg\">Connected!</div>"); //notify user
+		$('#message_box').prepend("<div class=\"system_msg\">Connected!</div>"); //notify user
 	}
+
+	$(document).ready(function(){
+			$('#message').keydown(function(event){
+					if (event.which==13) {
+								sendMSG();
+					}
+			});
+	})
 
 	// $('#send-btn').click(function(){ //use clicks message send button	
 	function sendMSG () {
@@ -90,15 +98,15 @@
 
 		if(type == 'usermsg') 
 		{
-			$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
+			$('#message_box').prepend("<div><span class=\"user_name\" style=\"color:#"+ucolor+"\">"+uname+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
 		}
 		else if(type == 'system')
 		{
-			$('#message_box').append("<div class=\"system_msg\">"+umsg+"</div>");
+			$('#message_box').prepend("<div class=\"system_msg\">"+umsg+"</div>");
 		}
 		else if(type == 'jacie')
 		{
-			$('#message_box').append("<div><span class=\"user_name\" style=\"color:#"+jacie_colour+"\">"+"Jacie: "+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
+			$('#message_box').prepend("<div><span class=\"user_name\" style=\"color:#"+jacie_colour+"\">"+"Jacie: "+"</span> : <span class=\"user_message\">"+umsg+"</span></div>");
 		}
 		
 		$('#message').val(''); //reset text
@@ -115,6 +123,7 @@
 // });
 </script>
 <div class="chat_wrapper">
+<a href="https://github.com/jyhong836/jacie">The Jacie At GitHub</a>
 <div class="message_box" id="message_box"></div>
 <div class="panel">
 <input type="text" name="name" id="name" placeholder="Your Name" maxlength="10" style="width:20%"  />
@@ -122,7 +131,6 @@
 <button onclick="sendMSG()" id="send-btn">Send</button>
 </div>
 </div>
-<a href="https://github.com/jyhong836/jacie">The Jacie At GitHub</a>
 
 </body>
 </html>
