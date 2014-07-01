@@ -102,9 +102,9 @@ def initAIMLRob():
 		k.bootstrap(brainFile = default_brn)
 	else:
 		print "error: can't find brn file."
+		k.bootstrap(learnFiles = "std-startup.xml", commands="load aiml b")
+		k.saveBrain("standard.brn")
 		return None
-		# k.bootstrap(learnFiles = "std-startup.xml", commands="load aiml b")
-		# k.saveBrain("standard.brn")
 	return k
 
 if __name__ == "__main__":
