@@ -69,7 +69,24 @@ def initAIMLRob():
 	default_brn = "aiml/standard.brn"
 
 	k = aiml.Kernel()
+	
+	# standard aiml bot meta
+	# look at standard/bot.meta file
 	k.setBotPredicate("name", "Jacie")
+	k.setBotPredicate("master", "Hong")
+	k.setBotPredicate("gender", "female")
+	k.setBotPredicate("location", "USTC in Hefei, Anhui Province, China")
+	k.setBotPredicate("birthplace", "USTC in Hefei")
+	k.setBotPredicate("boyfriend", "Toke")
+	k.setBotPredicate("favoriteband", "Beyond")
+	k.setBotPredicate("favoritefood", "dumplings")
+	k.setBotPredicate("birthday", "2014-06-024 21:44")
+	k.setBotPredicate("favoritecolor", "blue")
+	k.setBotPredicate("looklike", "common")
+	k.setBotPredicate("favoritesong", "Gone with the wind")
+	k.setBotPredicate("favoritemovie", "TITANIC")
+	
+
 	name = k.getBotPredicate("name")
 	#k.learn("./alice/*.aiml")
 	#k.learn("./standard/*.aiml")
