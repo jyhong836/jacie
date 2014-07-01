@@ -38,7 +38,8 @@
 	// $jacie_colour = 'F00';
 	?>
 
-<script src="scripts/jquery.min.js"></script>
+<!-- <script src="scripts/jquery.min.js"></script> -->
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
 
 <script src="scripts/chat.js"> </script>
 
